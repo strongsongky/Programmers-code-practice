@@ -1,1 +1,1 @@
-# 프로그래머스 연습 레포
+# Programmers-code-practice
