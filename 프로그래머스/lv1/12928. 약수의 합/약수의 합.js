@@ -1,0 +1,1 @@
+const solution = (n) => Array(n).fill().map((_,i) => i+1).filter(el => n % el === 0).reduce((acc,cur)=>acc+cur,0);
