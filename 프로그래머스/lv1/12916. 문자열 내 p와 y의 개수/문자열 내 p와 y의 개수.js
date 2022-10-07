@@ -1,0 +1,1 @@
+const solution = s => s.toUpperCase().split("P").length === s.toUpperCase().split("Y").length
