@@ -1,0 +1,1 @@
+const solution = phone_number => phone_number.replace(/\d(?=\d{4})/g, "*")
