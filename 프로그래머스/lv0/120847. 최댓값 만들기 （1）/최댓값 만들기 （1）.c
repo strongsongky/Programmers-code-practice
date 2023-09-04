@@ -2,21 +2,21 @@
 #include <stdbool.h>
 #include <stdlib.h>
 
-int compare(const void *a, const void *b) {
-    return (*(int *)b - *(int *)a);
-}
+// numbers_len은 배열 numbers의 길이입니다.
+int solution(int numbers[], size_t numbers_len) {
+    int max = 0, semax = 0;
 
-int solution(int numbers[], int numbers_len) {
-    qsort(numbers, numbers_len, sizeof(int), compare);
-    int answer = numbers[0] * numbers[1];
-    return answer;
-}
-
-int main() {
-    int numbers[] = {2, 4, 6, 8, 10};
-    int numbers_len = sizeof(numbers) / sizeof(numbers[0]);
-    
-    int result = solution(numbers, numbers_len);
-    
-    return 0;
+    for(int i = 0; i < numbers_len; i++){
+        if(numbers[i] > max){
+            semax = max;
+            max = numbers[i];
+        }
+        else if(numbers[i] == max){
+            semax = numbers[i];
+        }
+        else if(numbers[i] > semax){
+            semax = numbers[i];
+        }
+    }
+    return max * semax;
 }
